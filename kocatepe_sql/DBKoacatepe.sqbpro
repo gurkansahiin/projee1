@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/ceng10/Documents/kocatepe_sql/DBKoacatepe.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1027"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,9:mainTblmember"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="TblAutor" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="40"/><column index="2" value="81"/><column index="3" value="103"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Tblmember" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="40"/><column index="2" value="103"/><column index="3" value="125"/><column index="4" value="93"/><column index="5" value="49"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">--SELECT * FROM Tblmember
+--SELECT Member_City,Member_Surname FROM Tblmember
+--SELECT * FROM Tblmember WHERE Member_Name='Gürkan'
+--SELECT *FROM Tblmember WHERE Member_Name='Gürkan' AND Member_Surname='Şahin'
+--SELECT *FROM Tblmember WHERE Salary&gt;7500 AND Member_City='Manisa'
+--SELECT *FROM Tblmember WHERE Salary&gt;10000 AND Member_City='Afyon' 
+--SELECT *FROM Tblmember WHERE Member_Name like '%a%'
+--SELECT count (*) FROM Tblmember WHERE Member_Name like '%a%'
+--SELECT count (*) FROM Tblmember WHERE Member_City like 'a%' AND Salary&gt;6000
+--sELECT max(salary) FROM Tblmember --avg(salary)ortalama
+--SELECT * FROM Tblmember WHERE salary&lt;(SELECT avg(salary) FROM Tblmember)
+
+--SELECT sum(SALARY) FROM Tblmember
+--şehri izmir veya aydın olan kişilerin maaşların ortalamasını hesaplayan,içinde soyadında e harfi geçen
+--SELECT avg(salary) FROM Tblmember WHERE(Member_City='Aydın' OR Member_City='İzmir') AND Member_Surname like
+--SELECT * FROM Tblmember WHERE Salary=(SELECT min(salary) from Tblmember)
+--UPDATE Tblmember SET Member_Surname='Yıldız' where ID=3
+--UPDATE Tblmember SET  Salary=salary+250 WHERE Member_City like 'a%' --ŞARTI SONRA İSTENİLENİ UPDATEDEN SONRA YAPLIACAK
+--DELETE  FROM Tblmember WHERE ID=8
+
+--INSERT  into Tblmember (Member_Name,Member_Surname,Member_City) VALUES ('Selver','Obuz','Denizli')
+--SELECT * FROM Tblmember
+--gruplandırma
+SELECT Member_City,count(*) FROM Tblmember GROUP by Member_City ORDER by count(*) DESC
+
+
+
+
+
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
